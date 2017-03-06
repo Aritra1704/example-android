@@ -8,8 +8,8 @@ Example application built with the HyperTrack `TransmitterSDK` and `ConsumerSDK`
 2. Consumer - example of integration with `ConsumerSDK`, which allows real-time tracking of HyperTrack Tasks on a map
 
 ## Requirements
-1. Android studio with emulator (or test device)
-2. HyperTrack API keys. Learn more about them [here](http://docs.hypertrack.io/docs/get-api-keys).
+1. [Android Studio](https://developer.android.com/studio/index.html) with emulator (or utilize a test device)
+2. HyperTrack API keys. You'll need to [signup](http://www.hypertrack.com/signup) for an account, and then find your keys in your [Account Settings](https://dashboard.hypertrack.io/settings/accounts). You can find out more about how these keys are used in the [documentation](https://docs.hypertrack.com/guides/authentication.html).
 
 ## Usage: Driver
 ![Driver example](readme-imgs/driver.gif)
