@@ -41,4 +41,7 @@
     <!-- User Map Screen Strings-->
     <string name="track_user_on_map_dialog_title">User is not active currently. Would you still like to proceed to User Map Screen?</string>
     <string name="user_map_screen_title">Track User on Map</string>
+    <string name="start_job">Start Job</string>
+    <string name="close_job">Close Job</string>
+    <string name="accept_job">Accept Job</string>
 </resources>

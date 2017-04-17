@@ -50,22 +50,22 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/assignActionButton"
+                            android:id="@+id/acceptjob"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/assign_action_btn" />
+                            android:text="@string/accept_job" />
 
                         <Button
-                            android:id="@+id/completeActionButton"
+                            android:id="@+id/startjob"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/complete_action_btn" />
+                            android:text="@string/start_job" />
 
                         <Button
-                            android:id="@+id/trackUserOnMapButton"
+                            android:id="@+id/closejob"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/track_user_on_map_btn"/>
+                            android:text="@string/close_job" />
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
