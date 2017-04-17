@@ -75,28 +75,16 @@ public class MainActivity extends BaseActivity {
                             Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-    };
-    // Click Listener for StartJob Button
-    private View.OnClickListener startjobListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            mProgressDialog = new ProgressDialog(MainActivity.this);
-            mProgressDialog.setCancelable(false);
-            mProgressDialog.show();
 
-            Place expectedPlace = new Place().setLocation(28.56217, 77.16160)
-                    .setAddress("HyperTrack, Vasant Vihar")
-                    .setName("HyperTrack");
             // Create ActionParams object to define Action params
-            ActionParams params = new ActionParamsBuilder()
+            ActionParams stopOverParams = new ActionParamsBuilder()
                     .setExpectedPlace(expectedPlace)
                     .setExpectedAt(new Date())
                     .setType(Action.ACTION_TYPE_STOPOVER)
                     .build();
 
             // Call assignAction to start the tracking action
-            HyperTrack.createAndAssignAction(params, new HyperTrackCallback() {
+            HyperTrack.createAndAssignAction(stopOverParams, new HyperTrackCallback() {
                 @Override
                 public void onSuccess(@NonNull SuccessResponse response) {
                     if (mProgressDialog != null) {
@@ -125,6 +113,27 @@ public class MainActivity extends BaseActivity {
                 }
             });
         }
+    };
+    // Click Listener for StartJob Button
+    private View.OnClickListener startjobListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            mProgressDialog = new ProgressDialog(MainActivity.this);
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.show();
+
+            String visitActionId = SharedPreferenceStore.getVisitActionId(MainActivity.this);
+
+            if (TextUtils.isEmpty(visitActionId)) {
+                Toast.makeText(MainActivity.this, "VisitActionID is empty.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            HyperTrack.completeAction(visitActionId);
+
+            //Write your logic here
+
+        }
 
     };
     //Click Listener for CloseJob Button
@@ -133,25 +142,17 @@ public class MainActivity extends BaseActivity {
         public void onClick(View v) {
 
             String stopoverActionId = SharedPreferenceStore.getStopoverActionId(MainActivity.this);
-            String visitActionId = SharedPreferenceStore.getVisitActionId(MainActivity.this);
 
             // Validate ActionId before complete action call
             if (TextUtils.isEmpty(stopoverActionId)) {
                 Toast.makeText(MainActivity.this, "StopOverActionID is empty.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (TextUtils.isEmpty(visitActionId)) {
-                Toast.makeText(MainActivity.this, "VisitActionID is empty.", Toast.LENGTH_SHORT).show();
-                return;
-            }
 
             //Complete Job
             HyperTrack.completeAction(stopoverActionId);
-            HyperTrack.completeAction(visitActionId);
 
             //Write your logic here
-
-
         }
     };
 
