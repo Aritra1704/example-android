@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HyperTrack Example-Android</string>
+    <string name="app_name">Service Visit App</string>
     <string name="login_activity_title">Login</string>
 
     <string name="assign_action_btn">Assign an Action</string>

@@ -36,8 +36,5 @@
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".UserMapActivity"
-            android:screenOrientation="portrait"/>
-
     </application>
 </manifest>
